@@ -1,4 +1,3 @@
-import React from "react";
 import MyBreadCrumb from "../my-components/myBreadCrumb";
 
 const JavaPage = () => {
