@@ -12,11 +12,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="/hdev-blog" element={<App />}>
           <Route index element={<HomePage />} />
-          <Route path="/spring-boot" element={<SpringBootPage />} />
-          <Route path="/spring-boot/:id" element={<ArticlePage />} />
-          <Route path="/java" element={<JavaPage />} />
+          <Route path="/hdev-blog/spring-boot" element={<SpringBootPage />} />
+          <Route path="/hdev-blog/spring-boot/:id" element={<ArticlePage />} />
+          <Route path="/hdev-blog/java" element={<JavaPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -14,9 +14,9 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className="flex items-center space-x-6 text-md font-medium">
-          <HeaderLink text="Trang chủ" to="/" />
-          <HeaderLink text="Java" to="/java" />
-          <HeaderLink text="Spring Boot" to="/spring-boot" />
+          <HeaderLink text="Trang chủ" to="/hdev-blog" />
+          <HeaderLink text="Java" to="/hdev-blog/java" />
+          <HeaderLink text="Spring Boot" to="/hdev-blog/spring-boot" />
         </nav>
         {/* Right side controls */}
         <div className="flex flex-1 items-center justify-end space-x-2"></div>

@@ -16,7 +16,7 @@ const ArticlePage = () => {
   useEffect(() => {
     const fetchMarkdown = async () => {
       try {
-        const response = await fetch(`/lessons/${id}.md`); // Đường dẫn đến file Markdown
+        const response = await fetch(`/hdev-blog/lessons/${id}.md`); // Đường dẫn đến file Markdown
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -69,7 +69,7 @@ const ArticlePage = () => {
                   </SyntaxHighlighter>
                   <button
                     onClick={() => handleCopy(codeString)}
-                    className="cursor-pointer absolute top-2 right-2 bg-gray-3s00 text-white px-2 py-1 rounded-md hover:bg-gray-600 transition"
+                    className="cursor-pointer absolute top-2 right-2 bg-gray-300 text-white px-2 py-1 rounded-md hover:bg-gray-600 transition"
                   >
                     Copy
                   </button>
