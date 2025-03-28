@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/my-components/header";
 import { Toaster } from "@/components/ui/sonner";
 
-function App({ children }: { children: React.ReactNode }) {
+function App() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <Header />
