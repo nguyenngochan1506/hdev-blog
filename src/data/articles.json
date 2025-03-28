@@ -1,0 +1,11 @@
+[
+    {
+      "id": "1",
+      "title": "Buổi 1: Setup môi trường và tạo codebase cho dự án...",
+      "author": "Dev Lỏ",
+      "date": "28/03/2025",
+      "description": "Hướng dẫn tạo codebase cho dự án Spring Boot...",
+      "image": "https://e4developer.com/wp-content/uploads/2018/01/spring-boot.png",
+      "tags": ["Deployment", "Docker", "Spring Boot"]
+    }
+  ]
