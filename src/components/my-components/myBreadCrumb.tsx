@@ -1,14 +1,13 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 
-const MyBreadCrumb = ({ currentPage }) => {
+const MyBreadCrumb = ({ currentPage }: { currentPage: string }) => {
   return (
     <Breadcrumb>
       <BreadcrumbList>

@@ -7,8 +7,18 @@ import { Article } from "@/types/article";
 import { useEffect, useState } from "react";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism"; // Theme giống MarkText
+import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast } from "sonner";
+
+// Định nghĩa kiểu cho props của code component
+interface CodeProps {
+  node?: any;
+  inline?: boolean;
+  className?: string;
+  children: React.ReactNode;
+  [key: string]: any;
+}
+
 const ArticlePage = () => {
   const { id } = useParams<{ id: string }>();
   const [markdownContent, setMarkdownContent] = useState<string>("");
@@ -16,7 +26,7 @@ const ArticlePage = () => {
   useEffect(() => {
     const fetchMarkdown = async () => {
       try {
-        const response = await fetch(`/hdev-blog/lessons/${id}.md`); // Đường dẫn đến file Markdown
+        const response = await fetch(`/hdev-blog/lessons/${id}.md`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -28,15 +38,14 @@ const ArticlePage = () => {
     };
 
     fetchMarkdown();
-  }, [id]); // Chỉ gọi lại khi ID thay đổi
+  }, [id]);
 
-  // Danh sách bài viết
-  const article = (articles as Article[]).find((a) => a.id === id); // Tìm bài viết theo ID từ URL
+  const article = (articles as Article[]).find((a) => a.id === id);
   if (!article) {
     return <div>Bài viết không tồn tại.</div>;
   }
 
-  const title = article.title; // Có thể lấy động từ JSON nếu cần
+  const title = article.title;
 
   const handleCopy = (code: string) => {
     navigator.clipboard.writeText(code).then(() => {
@@ -52,14 +61,14 @@ const ArticlePage = () => {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
-            code({ node, inline, className, children, ...props }) {
+            code({ node, inline, className, children, ...props }: CodeProps) {
               const match = /language-(\w+)/.exec(className || "");
               const codeString = String(children).replace(/\n$/, "");
 
               return !inline && match ? (
                 <div className="relative">
                   <SyntaxHighlighter
-                    style={oneLight}
+                    style={oneLight as { [key: string]: React.CSSProperties }}
                     language={match[1]}
                     PreTag="div"
                     className="mt-4 mb-6 rounded-4xl!important"
